@@ -2,6 +2,7 @@ package com.dev4solutions.bleconnect;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +55,14 @@ public class BleAdapter extends BaseAdapter {
 
         BluetoothDevice bluetoothDevice = deviceArrayList.get(position);
 
-        viewHolder.textViewDevice.setText(bluetoothDevice.getName() + " : " + bluetoothDevice.getAddress());
+        String name = "Unknown : ";
+        if (!TextUtils.isEmpty(bluetoothDevice.getName())) {
+            name = bluetoothDevice.getName().toUpperCase() + " : ";
+        }
+
+        name += bluetoothDevice.getAddress();
+
+        viewHolder.textViewDevice.setText(name);
 
         return view;
     }

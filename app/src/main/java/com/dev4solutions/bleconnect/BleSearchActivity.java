@@ -9,8 +9,11 @@ import android.bluetooth.le.ScanSettings;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -47,9 +50,7 @@ public class BleSearchActivity extends AppCompatActivity implements AdapterView.
                 @Override
                 synchronized public void onScanResult(int callbackType, ScanResult result) {
                     super.onScanResult(callbackType, result);
-                    if (!TextUtils.isEmpty(result.getDevice().getName()) && result.getDevice().getName().equals("SAFER")) {
-                        bleAdapter.add(result.getDevice());
-                    }
+                    bleAdapter.add(result.getDevice());
                 }
             };
             scanSetting = new ScanSettings.Builder()
@@ -60,9 +61,7 @@ public class BleSearchActivity extends AppCompatActivity implements AdapterView.
             leScanCallback = new BluetoothAdapter.LeScanCallback() {
                 @Override
                 synchronized public void onLeScan(BluetoothDevice bluetoothDevice, int i, byte[] bytes) {
-                    if (!TextUtils.isEmpty(bluetoothDevice.getName()) && bluetoothDevice.getName().equals("SAFER")) {
-                        bleAdapter.add(bluetoothDevice);
-                    }
+                    bleAdapter.add(bluetoothDevice);
                 }
             };
         }
@@ -102,6 +101,31 @@ public class BleSearchActivity extends AppCompatActivity implements AdapterView.
         leScanCallback = null;
         scanCallback = null;
         filterList = null;
+    }
+
+
+    MenuItem refreshItem;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        refreshItem = menu.add(Menu.NONE, Menu.NONE, Menu.NONE, "REFRESH");
+        refreshItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item == refreshItem) {
+            bleAdapter.clear();
+            stopScanning();
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startScanning();
+                }
+            }, 1000);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

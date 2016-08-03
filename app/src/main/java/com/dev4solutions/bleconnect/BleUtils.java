@@ -35,11 +35,6 @@ public class BleUtils {
     private static final int BLUETOOTH_NOTIFICATION_ID = 20160802;
     public static final int FOREGROUND_NOTIFICATION_ID = 20160803;
     private static final int SAFER_DISCONNECTED_NOTIFICATION_ID = 20160804;
-    public static final String ACTION_BLE_START_ALERT = "com.dev4solutions.bleconnect.START_ALERT";
-    public static final String ACTION_BLE_STOP_ALERT = "com.dev4solutions.bleconnect.STOP_ALERT";
-    public static final String ACTION_BLE_REMOVE = "com.dev4solutions.bleconnect.BLE_REMOVE";
-    public static final String ACTION_BLE_REMOVED_COMPLETED = "com.dev4solutions.bleconnect.BLE_REMOVED_COMPLETELY";
-
 
     synchronized public static BluetoothAdapter getBluetoothAdapter(Context context) {
         BluetoothAdapter mBluetoothAdapter = null;
@@ -77,9 +72,6 @@ public class BleUtils {
         return s;
     }
 
-    public static void deleteDevice(Context context) {
-        context.getSharedPreferences(BLE_PREF, Context.MODE_PRIVATE).edit().remove(BLE_DEVICE).commit();
-    }
 
     public static void showBluetoothNotification(Context context) {
         Notification notification = new NotificationCompat.Builder(context)
