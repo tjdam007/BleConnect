@@ -3,19 +3,19 @@
 How Connect and auto Reconnect with BLE DEVICES.
 
 #Screen Shot 1
-![Screen Shot 1](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image1.png=400x800)
+![Screen Shot 1](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image1.png)
 
 #Screen Shot 2
-![Screen Shot 2](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image2.png=400x800)
+![Screen Shot 2](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image2.png)
 
 #Screen Shot 3
-![Screen Shot 3](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image3.png=400x800)
+![Screen Shot 3](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image3.png)
 
 #Screen Shot 4
-![Screen Shot 4](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image4.png=400x800)
+![Screen Shot 4](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image4.png)
 
 #Screen Shot 5
-![Screen Shot 5](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image5.png=400x800)
+![Screen Shot 5](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image5.png)
 
 License
 -------
