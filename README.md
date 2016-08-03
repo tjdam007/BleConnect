@@ -3,7 +3,7 @@
 How Connect and auto Reconnect with BLE DEVICES.
 
 #Screen Shot 1
-<img src="https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image1.png" width="50%"></img>
+![Screen Shot 1](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image1.png)
 
 #Screen Shot 2
 ![Screen Shot 2](https://raw.githubusercontent.com/tjdam007/BleConnect/master/raw/image2.png)
